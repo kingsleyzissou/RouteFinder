@@ -13,10 +13,7 @@ import javafx.scene.shape.Circle;
 import javafx.scene.shape.Line;
 
 import java.net.URL;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.ResourceBundle;
+import java.util.*;
 
 public class SceneController implements Initializable {
 
@@ -51,86 +48,44 @@ public class SceneController implements Initializable {
         );
 
         Node from = graph.getNodes().get(0);
-        Node needle = graph.getNodes().get(20);
-        RouteCost cost = TraverseGraph.search(from, null, 0, 0,0, needle);
+        Node needle = graph.getNodes().get(27);
 
-//        List<List<Node>> allPaths = TraverseGraph.findAll(from, null, needle);
+        ArrayList<Node> contains = new ArrayList<>();
+        contains.add(graph.getNodes().get(8));
+        contains.add(graph.getNodes().get(26));
+        contains.add(graph.getNodes().get(17));
+        contains.add(graph.getNodes().get(25));
+
+        HashMap map = new HashMap();
+        map.put("contains", contains);
+        map.put("avoid", new ArrayList());
 
         ArrayList<Line> lines = new ArrayList<>();
         ArrayList<Circle> circles = new ArrayList<>();
 
-//        List<RouteCost> routes = new ArrayList<>();
-//
-//        for(List<Node> match : allPaths) {
-//            RouteCost cost = new RouteCost();
-//            cost.addAll(match);
-//            routes.add(cost);
-//        }
-//
-//        RouteCost cost = Collections.min(routes, (r1, r2) -> (int) (r1.distance - r2.distance));
 
 
+        Dijkstra d = new Dijkstra(graph);
 
-//        if(!allPaths.isEmpty()) {
-//            int i = 0;
-//            for(List<Node> path : allPaths) {
-//                Node current = null;
-//                for(Node next : path) {
-//                    if(current != null) {
-//                        Line line = new Line(
-//                                current.getX(), current.getY(),
-//                                next.getX(), next.getY()
-//                        );
-//                        line.setStroke(colours.get(i%colours.size()));
-//                        lines.add(line);
-//                    }
-//                    current = next;
-//                    circles.add(new Circle(current.getX(), current.getY(), 5, colours.get(i%colours.size())));
-//                }
-//                i++;
-//            }
-//        }
+        List<Node> path = d.search(from, needle, map);
 
+        System.out.println(path.size());
 
-        Dijkstra dijkstra = new Dijkstra(graph);
-
-//        cost = dijkstra.search(from, needle);
-
-
-        if(cost != null) {
+        if(!path.isEmpty()) {
             Node current = null;
-            for(Node node : cost.nodeList) {
+            for(Node next : path) {
                 if(current != null) {
                     Line line = new Line(
                             current.getX(), current.getY(),
-                            node.getX(), node.getY()
+                            next.getX(), next.getY()
                     );
-                    line.setStroke(Color.BLUE);
+                    line.setStroke(Color.RED);
                     lines.add(line);
                 }
-                current = node;
-                circles.add(new Circle(current.getX(), current.getY(), 5, Color.RED));
+                circles.add(new Circle(next.getX(),  next.getY(), 5, Color.BLUE));
+                current = next;
             }
         }
-
-
-//        for(Node node : graph.getNodes()) {
-//            circles.add(new Circle(node.getX(), node.getY(), 5, Color.RED));
-//
-//            for(Edge edge : node.getNeighbours()) {
-//                Line line = new Line(
-//                        node.getX(), node.getY(),
-//                        edge.getDestination().getX(), edge.getDestination().getY()
-//                );
-//                line.setStroke(Color.BLUE);
-////                line.setStrokeWidth(10);
-//                lines.add(line);
-//            }
-//
-//        }
-
-
-
 
         Group content = new Group();
         zoomGroup = new Group();

@@ -13,7 +13,7 @@ public class DataLoader {
      * @throws IOException
      */
     public static void save(Graph graph) throws IOException {
-        FileOutputStream fos = new FileOutputStream(("graph_test.dat"));
+        FileOutputStream fos = new FileOutputStream(("graph.dat"));
         ObjectOutputStream oos = new ObjectOutputStream(fos);
         oos.writeObject(graph);
         oos.close();
@@ -27,7 +27,7 @@ public class DataLoader {
      * @throws ClassNotFoundException
      */
     public static Graph load() throws IOException, ClassNotFoundException {
-        FileInputStream fis = new FileInputStream("graph_test.dat");
+        FileInputStream fis = new FileInputStream("graph.dat");
         ObjectInputStream ois = new ObjectInputStream(fis);
         Graph graph = (Graph) ois.readObject();
         fis.close();

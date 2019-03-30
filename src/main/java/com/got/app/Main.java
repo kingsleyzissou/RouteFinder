@@ -23,20 +23,12 @@ public class Main extends Application {
 		ExcelReader.loadNodes(graph);
 		ExcelReader.loadEdges(graph);
 		DataLoader.save(graph);
-//		System.out.println("Save successful");
-//		Parent root = FXMLLoader.load(new File("src/main/java/com/got/app/Scene.fxml").toURL());
-//		Scene scene = new Scene(root);
-//		stage.setTitle("GoT");
-//		stage.setScene(scene);
-//		stage.show();
-        graph = DataLoader.load();
-        Dijkstra d = new Dijkstra(graph);
-
-        Node start = graph.getNodes().get(0);
-        Node to = graph.getNodes().get(19);
-
-        d.search(start, to);
-
+		System.out.println("Save successful");
+		Parent root = FXMLLoader.load(new File("src/main/java/com/got/app/Scene.fxml").toURL());
+		Scene scene = new Scene(root);
+		stage.setTitle("GoT");
+		stage.setScene(scene);
+		stage.show();
 	}
 
 	public static void main(String[] args) {
