@@ -5,107 +5,117 @@ import java.util.*;
 public class Dijkstra {
 
     private Graph graph;
+    private String type;
+    private List<Node> avoid;
     private Map<Node, DijkstraCost> cost;
 
-    public Dijkstra(Graph graph)  {
+    public Dijkstra(Graph graph, String type)  {
         this.graph =  graph;
         cost = new HashMap<>();
+        this.type = type;
         for(Node node : graph.getNodes()) {
-            this.cost.put(node, new DijkstraCost());
+            this.cost.put(node, new DijkstraCost(type));
         }
     }
 
-//    public List<Node> search(Node start, Node needle, HashMap<String) {
-//        List<Node> allPaths = new ArrayList<>();
-//        List<Node> avoid = waypoints.get("avoid");
-//        List<Node> wanted = waypoints.get("contains");
-//        wanted.add(0, start); wanted.add(wanted.size(), needle);
-//        allPaths.addAll(search(start, wanted.get(0), avoid));
-//        for(int index = 0; index < wanted.size() - 1; index++) {
-//            if(allPaths.contains(wanted.get(index))) continue;
-//            allPaths.addAll(search(wanted.get(index), wanted.get(index + 1), avoid));
-//            avoid.addAll(allPaths);
-//        }
-//        return allPaths;
-//    }
-
-    public List<Node> search(Node start, Node needle, HashMap<String, List<Node>> waypoints) {
-        List<Node> wanted = waypoints.get("contains"), avoid = waypoints.get("avoid");
+    /**
+     * Dijkstra's shortest path algorithm
+     *
+     * @param start node
+     * @param needle destination node
+     * @param avoid nodes to avoid
+     * @return shortest path
+     */
+    public Path shortestPath(Node start, Node needle, List<Node> avoid) {
+        this.avoid = avoid;
         Set<Node> encountered = new HashSet<>();
         Set<Node> unencountered = new HashSet<>();
-        cost.put(start, new DijkstraCost(0.0 , null));
+        cost.put(start, new DijkstraCost(0.0 , null, this.type));
         unencountered.add(start);
 
-        while(!unencountered.isEmpty() && wayPointsVisited(encountered, wanted)) {
-            filterOutUnwantedRoutes(unencountered, avoid);
+        while(!unencountered.isEmpty()) {
             Node smallest = smallestUnsettled(unencountered);
             unencountered.remove(smallest);
             updateNeighbourCosts(encountered, unencountered, smallest);
             encountered.add(smallest);
         }
 
-        List<Node> path = new ArrayList<>();
 
-        for(Node n = needle; n != null; n = cost.get(n).getPrevious()) {
-            path.add(n);
+        Path path = new Path();
+
+        Node n = needle;
+        while(cost.get(n) != null) {
+            Edge e = n.getEdgeByDestination(cost.get(n).getPrevious());
+            if(e != null) e = e.getReciprocalEdge();
+            path.add(n, e);
+            n = cost.get(n).getPrevious();
         }
 
-        Collections.reverse(path);
         return path;
     }
 
-    private boolean wayPointsVisited(Set<Node> encountered, List<Node> wanted) {
-        for(Node w : wanted) {
-            if(!encountered.contains(w)) return false;
+    /**
+     * Overloaded method of the shortest path algorithm which
+     * includes way point support
+     * @param start node
+     * @param needle destination node
+     * @param wanted way points
+     * @param avoid nodes to avoid
+     * @return shortest path
+     */
+    public Path shortestPath(Node start, Node needle, List<Node> wanted, List<Node> avoid) {
+        this.avoid = avoid;
+        wanted.add(0, start);
+        wanted.add(needle);
+        Path path = new Path();
+        for(int index = 0; index < wanted.size() - 1; index++) {
+            path.merge(shortestPath(wanted.get(index), wanted.get(index + 1), avoid));
         }
-        return true;
+
+        return path;
     }
 
-    private void filterOutUnwantedRoutes(Set<Node> unencountered, List<Node> avoid) {
-        for(Node unwanted : avoid) {
-            unencountered.remove(unwanted);
-        }
-    }
-
-    private void updateNeighbourCosts(Set<Node> encountered, Set<Node> unencountered, Node smallest) {
+    /**
+     * Get each neighbour node and update the cost to get to that
+     * node
+     *
+     * @param encountered list of nodes already encountered
+     * @param unencountered list of nodes not yet encountered
+     * @param smallest smallest node
+     */
+    private void updateNeighbourCosts(Set<Node> encountered, Collection<Node> unencountered, Node smallest) {
         for(Map.Entry<Node, Edge> entry : smallest.getNeighbours().entrySet()) {
+            // Get the node and the the edge to get to that node
             Node node = entry.getKey(); Edge edge = entry.getValue();
-            if(!encountered.contains(node)) {
+            if(!encountered.contains(node) // if  the node has not yet been encountered
+                    && !avoid.contains(node) // check that the node is not a node to be avoided
+                    && graph.getNodes().contains(node) // ensure that the node has not been removed from the graph
+                    && graph.getEdges().contains(edge))  // ensure the edge has not been removed from the graph
+            {
                 unencountered.add(node);
+                // Get the cost of the smallest neighbour node
                 Double smallestCost = cost.get(smallest).getCost();
+                // Get the cost required currently to get to the neighbour node
                 Double currentCost = cost.get(node).getCost();
-                Double cumulativeCost = smallestCost + edge.getDistance();
+                // The cumulative cost of reaching the neighbour node
+                Double cumulativeCost = smallestCost + edge.getCostByType(this.type);
+                // if the cumulative cost is smaller than the cost currently required,
+                // update the cost to get to the node
                 if(currentCost > cumulativeCost) {
-                    cost.put(entry.getKey(), new DijkstraCost(cumulativeCost, smallest));
+                    cost.put(entry.getKey(), new DijkstraCost(cumulativeCost, smallest, this.type));
                 }
             }
         }
     }
 
-//    public Node getSmallestNeighbour(Set<Node> unencountered) {
-//        Set<Map.Entry<Node, Edge>> smallestNeighbourSet = new HashSet<>();
-//        for(Node n : unencountered) {
-//            Map.Entry<Node, Edge> entry = smallestEntry(n.getNeighbours().entrySet());
-//            smallestNeighbourSet.add(entry);
-//        }
-//        return getSmallestUnencountered(smallestNeighbourSet);
-//    }
-
-//    private Node getSmallestUnencountered(Set<Map.Entry<Node, Edge>> smallestNeighbourSet) {
-//        Map.Entry<Node, Edge> entry = smallestEntry(smallestNeighbourSet);
-//        return entry.getKey();
-//    }
-
-    private Map.Entry<Node, Edge> smallestEntry(Set<Map.Entry<Node, Edge>> entrySet) {
-        return Collections.min(entrySet, (e1, e2) -> {
-            return (int) (e1.getValue().getDistance() - e2.getValue().getDistance());
-        });
-    }
-
+    /**
+     * Returns the smallest node note yet visited
+     *
+     * @param unencountered list of unencountered nodes
+     * @return the smallest unencountered node
+     */
     private Node smallestUnsettled(Set<Node> unencountered) {
-        return Collections.min(unencountered, (n1, n2) -> {
-            return (int) (cost.get(n1).getCost() - cost.get(n2).getCost());
-        });
+        return Collections.min(unencountered, (n1, n2) -> (int) (cost.get(n1).getCost() - cost.get(n2).getCost()));
     }
 
 

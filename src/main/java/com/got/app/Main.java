@@ -3,6 +3,7 @@ package com.got.app;
 import java.io.*;
 
 import com.got.collections.Dijkstra;
+import com.got.collections.Edge;
 import com.got.collections.Graph;
 import com.got.collections.Node;
 import com.got.helpers.DataLoader;

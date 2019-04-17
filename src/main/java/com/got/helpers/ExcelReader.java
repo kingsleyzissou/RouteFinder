@@ -20,12 +20,10 @@ public class ExcelReader {
      * @throws Exception
      */
     public static void loadNodes(Graph graph) throws Exception{
-        File excelFile = new File("towns.xlsx");
+        File excelFile = new File("towns3.0.xlsx");
         FileInputStream fis = new FileInputStream(excelFile);
-
         XSSFWorkbook workbook = new XSSFWorkbook(fis);
         XSSFSheet sheet = workbook.getSheetAt(0);
-
         for (Row row : sheet) {
             if(row.getCell(0) == null) continue;
             Double id = Double.parseDouble(row.getCell(0).toString());
@@ -46,12 +44,10 @@ public class ExcelReader {
      * @throws Exception
      */
     public static void loadEdges(Graph graph) throws Exception{
-        File excelFile = new File("towns.xlsx");
+        File excelFile = new File("towns3.0.xlsx");
         FileInputStream fis = new FileInputStream(excelFile);
-
         XSSFWorkbook workbook = new XSSFWorkbook(fis);
         XSSFSheet sheet = workbook.getSheetAt(1);
-
         for (Row row : sheet) {
             if(row.getCell(0) == null) continue;
             int sourceIndex = (int) Double.parseDouble(row.getCell(0).toString());
@@ -59,7 +55,8 @@ public class ExcelReader {
             int difficulty = (int) Double.parseDouble(row.getCell(2).toString());
             int danger = (int) Double.parseDouble(row.getCell(3).toString());
             ArrayList<Node> nodes = graph.getNodes();
-            new Edge(nodes.get(sourceIndex), nodes.get(destinationIndex), difficulty, danger);
+            new Edge(graph, nodes.get(sourceIndex), nodes.get(destinationIndex), difficulty, danger);
+            new Edge(graph, nodes.get(destinationIndex), nodes.get(sourceIndex), difficulty, danger);
         }
         workbook.close();
         fis.close();

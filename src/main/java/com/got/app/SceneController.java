@@ -2,11 +2,11 @@ package com.got.app;
 
 import com.got.collections.*;
 import com.got.helpers.DataLoader;
-import javafx.fxml.Initializable;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.Group;
-import javafx.scene.control.ScrollPane;
-import javafx.scene.control.Slider;
+import javafx.scene.control.*;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
@@ -23,7 +23,9 @@ public class SceneController implements Initializable {
     @FXML private Pane pane;
     @FXML private  Slider slider;
     @FXML private ScrollPane scrollPane;
-
+    @FXML private ComboBox<Node> from;
+    @FXML private ComboBox<Node> to;
+    @FXML private Button go;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -35,65 +37,54 @@ public class SceneController implements Initializable {
         }
 
 
-        ArrayList<Color> colours = new ArrayList<>();
+//        from.getItems().addAll(graph.getNodes());
+//        to.getItems().addAll(graph.getNodes());
 
-        Collections.addAll(colours,
-                Color.BLUE, Color.RED, Color.PALEGREEN, Color.VIOLET,
-                Color.FIREBRICK, Color.TURQUOISE, Color.TOMATO,
-                Color.YELLOW,  Color.INDIGO, Color.LIME,
-                Color.RED, Color.TEAL, Color.BEIGE, Color.AZURE,
-                Color.HONEYDEW, Color.CHOCOLATE, Color.CORAL,
-                Color.THISTLE, Color.TAN, Color.ORANGERED, Color.ORCHID,
-                Color.SEAGREEN, Color.SEASHELL
-        );
-
-        Node from = graph.getNodes().get(0);
-        Node needle = graph.getNodes().get(27);
+        Node source = graph.getNodes().get(0);
+//        Node destination = graph.getNodes().get(3);
+        Node destination = graph.getNodes().get(44);
 
         ArrayList<Node> contains = new ArrayList<>();
         contains.add(graph.getNodes().get(8));
-        contains.add(graph.getNodes().get(26));
         contains.add(graph.getNodes().get(17));
-        contains.add(graph.getNodes().get(25));
+        contains.add(graph.getNodes().get(26));
 
-        HashMap map = new HashMap();
+        ArrayList<Node> avoid = new ArrayList<>();
+//
+        HashMap<String, List<Node>> map = new HashMap<>();
+        map.put("avoid", avoid);
         map.put("contains", contains);
-        map.put("avoid", new ArrayList());
+//
 
-        ArrayList<Line> lines = new ArrayList<>();
-        ArrayList<Circle> circles = new ArrayList<>();
+        Dijkstra d = new Dijkstra(graph, "distance");
+//        Path path = d.shortestPath(source, destination, map);
+
+        YenKSP yen = new YenKSP(graph);
+        List<Path> paths = yen.kShortestPaths(source, destination, 3, contains, avoid);
+//        List<Path> paths = yen.kShortestPaths(source, destination, 3, avoid);
+
+//        System.out.println(paths.size());
 
 
+//        for(Path path : paths) {
+//        pane.getChildren().addAll(path.drawCircles(Color.RED));
+//        pane.getChildren().addAll(path.drawLines(Color.RED));
+        pane.getChildren().addAll(paths.get(0).drawCircles(Color.RED));
+        pane.getChildren().addAll(paths.get(0).drawLines(Color.RED));
+        pane.getChildren().addAll(paths.get(1).drawCircles(Color.BLUE));
+        pane.getChildren().addAll(paths.get(1).drawLines(Color.BLUE));
+        pane.getChildren().addAll(paths.get(2).drawCircles(Color.BLACK));
+        pane.getChildren().addAll(paths.get(2).drawLines(Color.BLACK));
+//        }
 
-        Dijkstra d = new Dijkstra(graph);
-
-        List<Node> path = d.search(from, needle, map);
-
-        System.out.println(path.size());
-
-        if(!path.isEmpty()) {
-            Node current = null;
-            for(Node next : path) {
-                if(current != null) {
-                    Line line = new Line(
-                            current.getX(), current.getY(),
-                            next.getX(), next.getY()
-                    );
-                    line.setStroke(Color.RED);
-                    lines.add(line);
-                }
-                circles.add(new Circle(next.getX(),  next.getY(), 5, Color.BLUE));
-                current = next;
-            }
-        }
+//
 
         Group content = new Group();
         zoomGroup = new Group();
         content.getChildren().add(zoomGroup);
         zoomGroup.getChildren().add(scrollPane.getContent());
         scrollPane.setContent(content);
-        pane.getChildren().addAll(circles);
-        pane.getChildren().addAll(lines);
+
         slider.valueProperty().addListener((ov, old_val, new_val) -> zoom(new_val.doubleValue()));
         zoom(0.2161);
     }
@@ -105,5 +96,6 @@ public class SceneController implements Initializable {
         scrollPane.setHvalue(h);
         scrollPane.setVvalue(v);
     }
+
 
 }

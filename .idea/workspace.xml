@@ -2,12 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="72b25934-6b85-4345-8c58-c2a109e697ff" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/graph.dat" beforeDir="false" afterPath="$PROJECT_DIR$/graph.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/got/app/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/got/app/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/got/app/SceneController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/got/app/SceneController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/got/collections/Dijkstra.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/got/collections/Dijkstra.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/got/helpers/DataLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/got/helpers/DataLoader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/~$towns_test.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/got/collections/TraverseGraph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/got/collections/TraverseGraph.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/got/helpers/ExcelReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/got/helpers/ExcelReader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/got/app/SceneController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/got/app/SceneController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/got/collections/Dijkstra.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/got/collections/Dijkstra.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/got/collections/TraverseGraph.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/got/collections/TraverseGraph.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/~$towns.xlsx" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -36,7 +40,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/com/got/app/Main.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="134">
-              <caret line="26" selection-start-line="26" selection-end-line="26" />
+              <caret line="23" selection-start-line="23" selection-end-line="23" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -47,8 +51,20 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/got/app/SceneController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="329">
-              <caret line="55" column="47" selection-start-line="55" selection-start-column="47" selection-end-line="55" selection-end-column="47" />
+            <state relative-caret-position="354">
+              <caret line="60" column="38" lean-forward="true" selection-start-line="60" selection-start-column="38" selection-end-line="60" selection-end-column="38" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/got/helpers/ExcelReader.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="212">
+              <caret line="52" column="47" selection-start-line="52" selection-start-column="47" selection-end-line="52" selection-end-column="47" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -59,8 +75,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/got/collections/Dijkstra.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="76">
-              <caret line="32" column="36" selection-start-line="32" selection-start-column="36" selection-end-line="32" selection-end-column="36" />
+            <state relative-caret-position="269">
+              <caret line="18" column="11" selection-start-line="18" selection-start-column="11" selection-end-line="18" selection-end-column="11" />
             </state>
           </provider>
         </entry>
@@ -92,15 +108,15 @@
         <option value="$PROJECT_DIR$/src/main/java/com/got/app/Edge.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/got/collections/EdgeCost.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/got/collections/Edge.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/got/helpers/ExcelReader.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/got/collections/RouteCost.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/got/collections/TraverseGraph.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/got/collections/Node.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/got/collections/DijkstraCost.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/got/helpers/DataLoader.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/got/app/Main.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/got/app/SceneController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/got/collections/TraverseGraph.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/got/collections/Dijkstra.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/got/app/SceneController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/got/helpers/ExcelReader.java" />
       </list>
     </option>
   </component>
@@ -137,7 +153,6 @@
     </navigator>
     <panes>
       <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -178,24 +193,6 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="got" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="app" type="b2602c69:ProjectViewProjectNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="got" type="462c0819:PsiDirectoryNode" />
-              <item name="collections" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="app" type="b2602c69:ProjectViewProjectNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="got" type="462c0819:PsiDirectoryNode" />
               <item name="helpers" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -206,6 +203,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -269,32 +267,37 @@
       <workItem from="1553557790899" duration="16572000" />
       <workItem from="1553703035002" duration="14687000" />
       <workItem from="1553787994263" duration="360000" />
-      <workItem from="1553788366248" duration="17503000" />
+      <workItem from="1553788366248" duration="17950000" />
+      <workItem from="1553974234336" duration="7786000" />
+      <workItem from="1554027919333" duration="4537000" />
+      <workItem from="1554200886192" duration="587000" />
+      <workItem from="1554299464607" duration="588000" />
+      <workItem from="1554812875878" duration="738000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="49122000" />
+    <option name="totallyTimeSpent" value="63805000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="797" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26037195" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.27825466" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="UI Designer" order="3" />
       <window_info id="Favorites" order="4" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3280116" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3280116" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3280116" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39912918" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" />
-      <window_info anchor="bottom" id="Terminal" order="9" weight="0.32946298" />
+      <window_info anchor="bottom" id="Terminal" order="9" weight="0.3280116" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="11" />
       <window_info anchor="bottom" id="Messages" order="12" weight="0.3280116" />
@@ -396,12 +399,12 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/got/app/Scene.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="253">
           <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
         </state>
       </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/got/app/got.jpg">
       <provider selected="true" editor-type-id="images" />
@@ -429,16 +432,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/got/helpers/ExcelReader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="141">
-          <caret line="49" column="61" lean-forward="true" selection-start-line="49" selection-start-column="61" selection-end-line="49" selection-end-column="61" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/got/helpers/DataLoader.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="636">
@@ -449,30 +442,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/got/collections/TraverseGraph.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="833">
-          <caret line="86" selection-start-line="86" selection-end-line="86" />
-          <folding>
-            <element signature="e#2019#2118#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/got/collections/Node.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="529">
           <caret line="29" column="28" selection-start-line="29" selection-start-column="28" selection-end-line="29" selection-end-column="28" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/got/app/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="134">
-          <caret line="26" selection-start-line="26" selection-end-line="26" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -507,10 +480,65 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk-10.0.2.jdk/Contents/Home/lib/src.zip!/java.base/java/util/AbstractCollection.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2">
+          <caret line="60" column="22" selection-start-line="60" selection-start-column="22" selection-end-line="60" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk-10.0.2.jdk/Contents/Home/lib/src.zip!/java.base/java/util/AbstractQueue.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="64" column="18" selection-start-line="64" selection-start-column="18" selection-end-line="64" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk-10.0.2.jdk/Contents/Home/lib/src.zip!/java.base/java/util/PriorityQueue.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="173">
+          <caret line="83" column="43" selection-start-line="83" selection-start-column="43" selection-end-line="83" selection-end-column="43" />
+          <folding>
+            <element signature="e#4375#4376#0" expanded="true" />
+            <element signature="e#4427#4428#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/got/collections/TraverseGraph.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="664">
+          <caret line="113" column="17" selection-start-line="113" selection-start-column="17" selection-end-line="113" selection-end-column="17" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/got/app/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="134">
+          <caret line="23" selection-start-line="23" selection-end-line="23" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/got/helpers/ExcelReader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="212">
+          <caret line="52" column="47" selection-start-line="52" selection-start-column="47" selection-end-line="52" selection-end-column="47" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/got/app/SceneController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="329">
-          <caret line="55" column="47" selection-start-line="55" selection-start-column="47" selection-end-line="55" selection-end-column="47" />
+        <state relative-caret-position="354">
+          <caret line="60" column="38" lean-forward="true" selection-start-line="60" selection-start-column="38" selection-end-line="60" selection-end-column="38" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -519,8 +547,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/got/collections/Dijkstra.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="32" column="36" selection-start-line="32" selection-start-column="36" selection-end-line="32" selection-end-column="36" />
+        <state relative-caret-position="269">
+          <caret line="18" column="11" selection-start-line="18" selection-start-column="11" selection-end-line="18" selection-end-column="11" />
         </state>
       </provider>
     </entry>
