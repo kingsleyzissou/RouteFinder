@@ -16,11 +16,9 @@ import javafx.stage.Stage;
 
 public class Main extends Application {
 
-	private Graph graph;
-
 	@Override
 	public void start(Stage stage) throws Exception {
-		graph = new Graph();
+		Graph graph = new Graph();
 		ExcelReader.loadNodes(graph);
 		ExcelReader.loadEdges(graph);
 		DataLoader.save(graph);

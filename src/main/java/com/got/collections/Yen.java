@@ -2,11 +2,11 @@ package com.got.collections;
 
 import java.util.*;
 
-public class YenKSP {
+public class Yen {
 
     private Graph graph;
 
-    public YenKSP(Graph graph) {
+    public Yen(Graph graph) {
         this.graph = graph;
     }
 
@@ -21,14 +21,14 @@ public class YenKSP {
      * @param from starting node
      * @param to ending node
      * @param K number of paths to be found
-     * @param avoid paths to avoid
+     * @param avoidPoints paths to avoid
      * @return list of K shortest paths
      */
-    public List<Path> kShortestPaths(Node from, Node to, int K, List<Node> avoid) {
+    public List<Path> kShortestPaths(Node from, Node to, int K, List<Node> avoidPoints) {
         List<Path> A = new ArrayList<>();
         Queue<Path> B = new PriorityQueue<>();
         // Calculate the shortest path first
-        Path shortest = new Dijkstra(graph,"distance").shortestPath(from, to, avoid);
+        Path shortest = new Dijkstra(graph,"distance").shortestPath(from, to, avoidPoints);
         A.add(shortest);
         // Loop through K times
         for(int k = 1; k < K; k++) {
@@ -61,20 +61,21 @@ public class YenKSP {
     }
 
     /**
-     * Overloaded method of the above, which includes waypoint support
+     * Overloaded method of the above, which includes way point support
      *
      * @param from starting node
      * @param to destination node
      * @param K number of shortest paths
-     * @param wanted waypoints
-     * @param avoid nodes to avoid
+     * @param wayPoints way points
+     * @param avoidPoints nodes to avoid
      * @return K shortest paths
      */
-    public List<Path> kShortestPaths(Node from, Node to, int K, List<Node> wanted, List<Node> avoid) {
-        List<Path> paths = new ArrayList<>(kShortestPaths(from, wanted.get(0), K, avoid));
-        wanted.add(to);
-        for(int index = 0; index < wanted.size() - 1; index++) {
-            List<Path> result = kShortestPaths(wanted.get(index), wanted.get(index + 1), K, avoid);
+    public List<Path> kShortestPaths(Node from, Node to, int K, List<Node> wayPoints, List<Node> avoidPoints) {
+        if(wayPoints.isEmpty()) return kShortestPaths(from, to, K, avoidPoints);
+        List<Path> paths = new ArrayList<>(kShortestPaths(from, wayPoints.get(0), K, avoidPoints));
+        wayPoints.add(to);
+        for(int index = 0; index < wayPoints.size() - 1; index++) {
+            List<Path> result = kShortestPaths(wayPoints.get(index), wayPoints.get(index + 1), K, avoidPoints);
             for(int k = 0; k < K; k++) {
                 paths.get(k).merge(result.get(k));
             }
