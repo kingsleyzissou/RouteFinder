@@ -63,7 +63,7 @@
                <Insets left="10.0" right="10.0" />
             </VBox.margin>
          </ComboBox>
-         <Button mnemonicParsing="false" text="Go" onAction="#go">
+         <Button mnemonicParsing="false" onMouseClicked="#go" text="Go">
             <VBox.margin>
                <Insets bottom="10.0" left="133.0" top="10.0" />
             </VBox.margin>
@@ -75,14 +75,16 @@
                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="412.0" prefWidth="177.0">
                         <children>
                            <Label layoutX="9.0" layoutY="6.0" text="Way points" />
-                           <ComboBox fx:id="wayPointSelection" layoutX="8.0" layoutY="25.0" onAction="#addWayPoint" prefHeight="27.0" prefWidth="155.0" />
+                           <ComboBox fx:id="wayPointSelection" layoutX="8.0" layoutY="25.0" prefHeight="27.0" prefWidth="125.0" />
                            <Label layoutX="9.0" layoutY="190.0" text="Avoid" />
-                           <ComboBox fx:id="avoidPointSelection" layoutX="8.0" layoutY="207.0" onAction="#addAvoidPoint" prefHeight="27.0" prefWidth="155.0" />
+                           <ComboBox fx:id="avoidPointSelection" layoutX="8.0" layoutY="207.0" prefHeight="27.0" prefWidth="125.0" />
                            <ListView fx:id="wayPointList" layoutX="9.0" layoutY="60.0" prefHeight="78.0" prefWidth="153.0" />
                            <Button layoutX="10.0" layoutY="148.0" mnemonicParsing="false" onMouseClicked="#removeWayPoint" text="-" />
                            <ListView fx:id="avoidPointList" layoutX="9.0" layoutY="243.0" prefHeight="78.0" prefWidth="153.0" />
                            <Button layoutX="10.0" layoutY="331.0" mnemonicParsing="false" onMouseClicked="#removeAvoidPoint" text="-" />
-                           <Button layoutX="74.0" layoutY="374.0" mnemonicParsing="false" onAction="#go" text="Recalculate" />
+                           <Button layoutX="74.0" layoutY="374.0" mnemonicParsing="false" onMouseClicked="#go" text="Recalculate" />
+                           <Button layoutX="139.0" layoutY="25.0" mnemonicParsing="false" onMouseClicked="#addWayPoint" text="+" />
+                           <Button layoutX="139.0" layoutY="207.0" mnemonicParsing="false" onMouseClicked="#addAvoidPoint" text="+" />
                         </children>
                      </AnchorPane>
                </content>
@@ -91,14 +93,18 @@
                <content>
                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                         <children>
-                           <ListView layoutX="-11.0" prefHeight="200.0" prefWidth="200.0" />
+                           <ListView fx:id="routeList" layoutX="-11.0" onMouseClicked="#updateSelectedRoute" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
                         </children>
                      </AnchorPane>
                </content>
              </TitledPane>
              <TitledPane animated="false" text="List view">
                <content>
-                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                       <children>
+                           <ListView fx:id="nodeList" layoutX="-11.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                       </children>
+                   </AnchorPane>
                </content>
              </TitledPane>
            </panes>

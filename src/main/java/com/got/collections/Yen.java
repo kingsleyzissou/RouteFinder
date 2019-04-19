@@ -24,11 +24,11 @@ public class Yen {
      * @param avoidPoints paths to avoid
      * @return list of K shortest paths
      */
-    public List<Path> kShortestPaths(Node from, Node to, int K, List<Node> avoidPoints) {
+    public List<Path> kShortestPaths(Node from, Node to, int K, String type, List<Node> avoidPoints) {
         List<Path> A = new ArrayList<>();
         Queue<Path> B = new PriorityQueue<>();
         // Calculate the shortest path first
-        Path shortest = new Dijkstra(graph,"distance").shortestPath(from, to, avoidPoints);
+        Path shortest = new Dijkstra(graph,type).shortestPath(from, to, avoidPoints);
         A.add(shortest);
         // Loop through K times
         for(int k = 1; k < K; k++) {
@@ -48,14 +48,16 @@ public class Yen {
                 // in order to alter the route slightly from Dijkstra
                 removeNodes(rootPath, spurNode);
                 // Get shortest path from spur node to sought after node
-                Path spurPath = new Dijkstra(graph, "distance").shortestPath(spurNode, to, new ArrayList<>());
+                Path spurPath = new Dijkstra(graph, type).shortestPath(spurNode, to, avoidPoints);
                 // Merge the spur path to the root path
                 mergeSpurToRoot(spurPath, rootPath, B);
                 // Restore nodes and edges back to graph
                 graph.restore();
             }
             if(B.isEmpty()) break;
-            A.add(k, B.remove());
+            Path candidate = B.remove();
+            candidate.updateIndex(A.size() + 1); // Set the index to show the rank of the route
+            A.add(k, candidate);
         }
         return A;
     }
@@ -70,12 +72,12 @@ public class Yen {
      * @param avoidPoints nodes to avoid
      * @return K shortest paths
      */
-    public List<Path> kShortestPaths(Node from, Node to, int K, List<Node> wayPoints, List<Node> avoidPoints) {
-        if(wayPoints.isEmpty()) return kShortestPaths(from, to, K, avoidPoints);
-        List<Path> paths = new ArrayList<>(kShortestPaths(from, wayPoints.get(0), K, avoidPoints));
+    public List<Path> kShortestPaths(Node from, Node to, int K, String type, List<Node> wayPoints, List<Node> avoidPoints) {
+        if(wayPoints.isEmpty()) return kShortestPaths(from, to, K, type, avoidPoints);
+        List<Path> paths = new ArrayList<>(kShortestPaths(from, wayPoints.get(0), K, type, avoidPoints));
         wayPoints.add(to);
         for(int index = 0; index < wayPoints.size() - 1; index++) {
-            List<Path> result = kShortestPaths(wayPoints.get(index), wayPoints.get(index + 1), K, avoidPoints);
+            List<Path> result = kShortestPaths(wayPoints.get(index), wayPoints.get(index + 1), K, type, avoidPoints);
             for(int k = 0; k < K; k++) {
                 paths.get(k).merge(result.get(k));
             }
@@ -93,7 +95,9 @@ public class Yen {
     private void removeEdges(List<Path> A, Path rootPath, int i) {
         for(Path p : A) {
             // Temporary  sub path for comparison
-            Path temp = createSubPath(p, i);
+            Path temp = null;
+            if(p.getEdges().size() > i)
+                temp = createSubPath(p, i);
             // If the temp path matches root path, remove the first edge
             if(rootPath.equals(temp)) {
                 Edge edge = p.getEdges().get(i);
@@ -146,7 +150,8 @@ public class Yen {
             Path total = new Path(rootPath.getNodes(), rootPath.getEdges());
             total.merge(spurPath);
             total.getNodes();
-            B.add(total);
+            if(total.isValid())
+                B.add(total);
         }
     }
 

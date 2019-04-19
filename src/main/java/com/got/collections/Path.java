@@ -9,17 +9,20 @@ import java.util.List;
 
 public class Path implements Comparable {
 
+    private int index;
     private List<Node> nodes;
     private List<Edge> edges;
     private boolean reversed;
     private Double cost = 0.0;
 
     public Path() {
+        this.index = 1;
         nodes = new ArrayList<>();
         edges = new ArrayList<>();
     }
 
     public Path(List<Node> nodes, List<Edge> edges) {
+        this.index = 1;
         this.nodes = new ArrayList<>(nodes);
         this.edges = new ArrayList<>(edges);
     }
@@ -58,6 +61,13 @@ public class Path implements Comparable {
             }
         }
         this.cost = cost;
+    }
+
+    /**
+     * Updates the index (used for the rank/order of the route)
+     */
+    public void updateIndex(int index) {
+        this.index = index;
     }
 
     /**
@@ -104,7 +114,7 @@ public class Path implements Comparable {
      *
      * @return list of edges in the path
      */
-    List<Edge> getEdges() {
+    public List<Edge> getEdges() {
         if(!reversed) reversePath();
         edges.remove(null);
         return edges;
@@ -121,7 +131,7 @@ public class Path implements Comparable {
         List<Circle> circles = new ArrayList<>();
         for(Node node : nodes) {
             if(node != null) {
-                circles.add(new Circle(node.getX(), node.getY(), 5, color));
+                circles.add(new Circle(node.getX(), node.getY(), 8, color));
             }
         }
         return circles;
@@ -145,10 +155,27 @@ public class Path implements Comparable {
                     dest.getX(), dest.getY()
                 );
                 line.setStroke(color);
+                line.setStrokeWidth(3);
                 lines.add(line);
             }
         }
         return lines;
+    }
+
+    /**
+     * Check if a route is valid or not
+     *
+     * @return boolean
+     */
+    public boolean isValid() {
+        for(Node node : getNodes()) {
+            int count = 0;
+            for(Node neighbour : node.getNeighbours().keySet()) {
+                if(getNodes().contains(neighbour)) count++;
+            }
+            if(count == 0) return false;
+        }
+        return true;
     }
 
     /**
@@ -188,5 +215,15 @@ public class Path implements Comparable {
         List<Node> temp1 = new ArrayList<>(this.nodes);
         List<Node> temp2 = new ArrayList<>(p.getNodes());
         return (temp1.containsAll(temp2) && (temp1.size() == temp2.size()));
+    }
+
+    /**
+     * String representation of object
+     *
+     * @return route name and index
+     */
+    @Override
+    public String toString() {
+        return "Route " + index;
     }
 }

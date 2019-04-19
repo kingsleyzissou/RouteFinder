@@ -22,6 +22,11 @@ public class SceneController implements Initializable {
     private List<Node> wayPoints = new ArrayList<>();
     private List<Node> avoidPoints = new ArrayList<>();
 
+    private Path selectedPath;
+    private List<Path> suitablePaths = new ArrayList<>();
+
+
+
     @FXML private Pane pane;
     @FXML private ScrollPane scrollPane;
     @FXML private ComboBox<Node> fromSelection;
@@ -31,6 +36,8 @@ public class SceneController implements Initializable {
     @FXML private ComboBox<String> measurementSelection;
     @FXML private ListView<Node> wayPointList;
     @FXML private ListView<Node> avoidPointList;
+    @FXML private ListView<Node> nodeList;
+    @FXML private ListView<Path> routeList;
 
 
     @Override
@@ -86,36 +93,84 @@ public class SceneController implements Initializable {
         avoidPointList.setItems(avoid);
     }
 
+    private void updateDesiredNodes(ComboBox<Node> combo, List<Node> wanted, List<Node> opposite) {
+        Node selection = combo.getSelectionModel().getSelectedItem();
+        combo.getSelectionModel().clearSelection();
+        opposite.remove(selection);
+        if(!wanted.contains(selection) && selection != null) wanted.add(selection);
+        updateListViews();
+    }
+
     private void clear() {
-        wayPoints.clear();
-        avoidPoints.clear();
         pane.getChildren().clear();
         updateListViews();
     }
 
     @FXML
     private void go() {
-        clear();
         Yen yen = new Yen(graph);
         Node from = fromSelection.getSelectionModel().getSelectedItem();
         Node to = toSelection.getSelectionModel().getSelectedItem();
-        List<Path> paths = yen.kShortestPaths(from, to, 3, wayPoints, avoidPoints);
-        drawFirstRoute(paths);
+        String type = measurementSelection.getSelectionModel().getSelectedItem();
+        if(!valid(from, to, type)) return;
+        suitablePaths = yen.kShortestPaths(from, to, 3, type, wayPoints, avoidPoints);
+        selectedPath = suitablePaths.remove(0);
+        drawSelectedRoute();
+        setSelectedRouteNodes();
+        updateRouteList();
     }
 
-    private void drawFirstRoute(List<Path> paths) {
-        Path path = paths.get(0);
-        System.out.println(path.getNodes());
-        pane.getChildren().addAll(path.drawCircles(Color.RED));
-        pane.getChildren().addAll(path.drawLines(Color.RED));
+    private boolean valid(Node from, Node to, String type) {
+        if(from == null || to == null || type == null) {
+            showAlert("No empty selections allowed");
+            return false;
+        }
+        if(from.equals(to)) {
+            showAlert("Start and end points cannot be the same");
+            return false;
+        }
+        return true;
+    }
+
+    private void showAlert(String message) {
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle("Error Dialog");
+        alert.setHeaderText(message);
+        alert.showAndWait();
+    }
+
+    @FXML
+    private void updateSelectedRoute() {
+        suitablePaths.add(selectedPath);
+        selectedPath = routeList.getSelectionModel().getSelectedItem();
+        suitablePaths.remove(selectedPath);
+        updateRouteList();
+        setSelectedRouteNodes();
+        drawSelectedRoute();
+    }
+
+    private void setSelectedRouteNodes() {
+        if(selectedPath != null) {
+            ObservableList<Node> nodes = FXCollections.observableArrayList(selectedPath.getNodes());
+            nodeList.setItems(nodes);
+        }
+    }
+
+    private void updateRouteList() {
+        suitablePaths.sort((p1, p2) -> (int) (p1.getCost() - p2.getCost()));
+        ObservableList<Path> paths = FXCollections.observableArrayList(suitablePaths);
+        routeList.setItems(paths);
+    }
+
+    private void drawSelectedRoute() {
+        pane.getChildren().clear();
+        pane.getChildren().addAll(selectedPath.drawCircles(Color.RED));
+        pane.getChildren().addAll(selectedPath.drawLines(Color.RED));
     }
 
     @FXML
     private void addWayPoint() {
-        Node selection = wayPointSelection.getSelectionModel().getSelectedItem();
-        avoidPoints.remove(selection);
-        if(!wayPoints.contains(selection)) wayPoints.add(selection);
-        updateListViews();
+        updateDesiredNodes(wayPointSelection, wayPoints, avoidPoints);
     }
 
     @FXML
@@ -127,10 +182,7 @@ public class SceneController implements Initializable {
 
     @FXML
     private void addAvoidPoint() {
-        Node selection = wayPointSelection.getSelectionModel().getSelectedItem();
-        wayPoints.remove(selection);
-        if(!avoidPoints.contains(selection)) avoidPoints.add(selection);
-        updateListViews();
+        updateDesiredNodes(avoidPointSelection, avoidPoints, wayPoints);
     }
 
     @FXML
@@ -155,7 +207,6 @@ public class SceneController implements Initializable {
         zoomValue = (zoomValue - step < zoomMin) ? zoomMin : zoomValue - step;
         zoom(zoomValue);
     }
-
 
     //        Node source = graph.getNodes().get(0);
 //        Node destination = graph.getNodes().get(3);
