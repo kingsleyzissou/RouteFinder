@@ -1,4 +1,4 @@
-package com.got.collections;
+package com.got.app.collections;
 
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;

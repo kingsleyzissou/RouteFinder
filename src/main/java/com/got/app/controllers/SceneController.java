@@ -1,7 +1,7 @@
-package com.got.app;
+package com.got.app.controllers;
 
-import com.got.collections.*;
-import com.got.helpers.DataLoader;
+import com.got.app.collections.*;
+import com.got.app.helpers.DataLoader;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;

@@ -2,12 +2,9 @@ package com.got.app;
 
 import java.io.*;
 
-import com.got.collections.Dijkstra;
-import com.got.collections.Edge;
-import com.got.collections.Graph;
-import com.got.collections.Node;
-import com.got.helpers.DataLoader;
-import com.got.helpers.ExcelReader;
+import com.got.app.collections.Graph;
+import com.got.app.helpers.DataLoader;
+import com.got.app.helpers.ExcelReader;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -18,12 +15,7 @@ public class Main extends Application {
 
 	@Override
 	public void start(Stage stage) throws Exception {
-		Graph graph = new Graph();
-		ExcelReader.loadNodes(graph);
-		ExcelReader.loadEdges(graph);
-		DataLoader.save(graph);
-		System.out.println("Save successful");
-		Parent root = FXMLLoader.load(new File("src/main/java/com/got/app/Scene.fxml").toURL());
+		Parent root = FXMLLoader.load(new File("src/main/java/com/got/app/resources/Scene.fxml").toURL());
 		Scene scene = new Scene(root);
 		stage.setTitle("GoT");
 		stage.setScene(scene);

@@ -1,11 +1,11 @@
-package com.got.helpers;
+package com.got.app.helpers;
 
 import java.io.File;
 import java.util.ArrayList;
 import java.io.FileInputStream;
-import com.got.collections.Node;
-import com.got.collections.Edge;
-import com.got.collections.Graph;
+import com.got.app.collections.Node;
+import com.got.app.collections.Edge;
+import com.got.app.collections.Graph;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
@@ -20,7 +20,7 @@ public class ExcelReader {
      * @throws Exception
      */
     public static void loadNodes(Graph graph) throws Exception{
-        File excelFile = new File("towns.xlsx");
+        File excelFile = new File("src/main/java/com/got/app/database/towns.xlsx");
         FileInputStream fis = new FileInputStream(excelFile);
         XSSFWorkbook workbook = new XSSFWorkbook(fis);
         XSSFSheet sheet = workbook.getSheetAt(0);
@@ -44,7 +44,7 @@ public class ExcelReader {
      * @throws Exception
      */
     public static void loadEdges(Graph graph) throws Exception{
-        File excelFile = new File("towns.xlsx");
+        File excelFile = new File("src/main/java/com/got/app/database/towns.xlsx");
         FileInputStream fis = new FileInputStream(excelFile);
         XSSFWorkbook workbook = new XSSFWorkbook(fis);
         XSSFSheet sheet = workbook.getSheetAt(1);

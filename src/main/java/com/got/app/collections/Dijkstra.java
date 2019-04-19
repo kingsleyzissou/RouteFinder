@@ -1,4 +1,4 @@
-package com.got.collections;
+package com.got.app.collections;
 
 import java.util.*;
 

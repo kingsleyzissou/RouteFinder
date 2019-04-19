@@ -1,4 +1,4 @@
-package com.got.collections;
+package com.got.app.collections;
 
 public class DijkstraCost {
 

@@ -1,6 +1,6 @@
-package com.got.helpers;
+package com.got.app.helpers;
 
-import com.got.collections.Graph;
+import com.got.app.collections.Graph;
 
 import java.io.*;
 
@@ -13,7 +13,7 @@ public class DataLoader {
      * @throws IOException
      */
     public static void save(Graph graph) throws IOException {
-        FileOutputStream fos = new FileOutputStream(("graph.dat"));
+        FileOutputStream fos = new FileOutputStream(("src/main/java/com/got/app/database/graph.dat"));
         ObjectOutputStream oos = new ObjectOutputStream(fos);
         oos.writeObject(graph);
         oos.close();
@@ -27,7 +27,7 @@ public class DataLoader {
      * @throws ClassNotFoundException
      */
     public static Graph load() throws IOException, ClassNotFoundException {
-        FileInputStream fis = new FileInputStream("graph.dat");
+        FileInputStream fis = new FileInputStream("src/main/java/com/got/app/database/graph.dat");
         ObjectInputStream ois = new ObjectInputStream(fis);
         Graph graph = (Graph) ois.readObject();
         fis.close();

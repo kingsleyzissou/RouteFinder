@@ -1,7 +1,6 @@
-package com.got.collections;
+package com.got.app.collections;
 
 import java.io.Serializable;
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Set;
