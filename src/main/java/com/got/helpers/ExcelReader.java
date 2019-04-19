@@ -20,7 +20,7 @@ public class ExcelReader {
      * @throws Exception
      */
     public static void loadNodes(Graph graph) throws Exception{
-        File excelFile = new File("towns3.0.xlsx");
+        File excelFile = new File("towns.xlsx");
         FileInputStream fis = new FileInputStream(excelFile);
         XSSFWorkbook workbook = new XSSFWorkbook(fis);
         XSSFSheet sheet = workbook.getSheetAt(0);
@@ -44,7 +44,7 @@ public class ExcelReader {
      * @throws Exception
      */
     public static void loadEdges(Graph graph) throws Exception{
-        File excelFile = new File("towns3.0.xlsx");
+        File excelFile = new File("towns.xlsx");
         FileInputStream fis = new FileInputStream(excelFile);
         XSSFWorkbook workbook = new XSSFWorkbook(fis);
         XSSFSheet sheet = workbook.getSheetAt(1);
