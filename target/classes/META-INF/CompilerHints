@@ -3,4 +3,9 @@ dontinline,*.*_avgt_jmhStub
 dontinline,*.*_sample_jmhStub
 dontinline,*.*_ss_jmhStub
 dontinline,*.*_thrpt_jmhStub
-inline,com/got/benchmarks/MyBenchmark.testMethod
+inline,com/got/benchmarks/GraphBenchmarkTest$BenchmarkState.initialise
+inline,com/got/benchmarks/GraphBenchmarkTest.a_getShortestPath
+inline,com/got/benchmarks/GraphBenchmarkTest.b_getShortestPathAvoidingSingleNode
+inline,com/got/benchmarks/GraphBenchmarkTest.c_getShortestPathWithWayPoints
+inline,com/got/benchmarks/GraphBenchmarkTest.d_getKShortestPaths
+inline,com/got/benchmarks/GraphBenchmarkTest.e_getKShortestPathsWithWayPoints

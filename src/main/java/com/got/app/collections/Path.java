@@ -167,7 +167,8 @@ public class Path implements Comparable {
      *
      * @return boolean
      */
-    public boolean isValid() {
+    public boolean isValid(Node start, Node end) {
+        if(!(getNodes().contains(start) && getNodes().contains(end))) return false;
         for(Node node : getNodes()) {
             int count = 0;
             for(Node neighbour : node.getNeighbours().keySet()) {

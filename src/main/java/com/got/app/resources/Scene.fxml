@@ -29,6 +29,7 @@
       <children>
          <Button layoutX="45.0" layoutY="612.0" minHeight="25.0" minWidth="27.0" mnemonicParsing="false" onMouseClicked="#zoomIn" text="+" />
          <Button layoutX="45.0" layoutY="647.0" minHeight="25.0" minWidth="27.0" mnemonicParsing="false" onMouseClicked="#zoomOut" text="-" />
+         <Button layoutX="45.0" layoutY="45.0" minHeight="25.0" minWidth="27.0" mnemonicParsing="false" onMouseClicked="#stopMediaPlayer" text="Stop song" />
       </children>
    </Pane>
    <VBox layoutX="1101.0" prefHeight="720.0" prefWidth="179.0">

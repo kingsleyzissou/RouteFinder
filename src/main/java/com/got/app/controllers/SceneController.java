@@ -9,8 +9,11 @@ import javafx.fxml.Initializable;
 import javafx.scene.Group;
 import javafx.scene.control.*;
 import javafx.scene.layout.Pane;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 import javafx.scene.paint.Color;
 
+import java.io.File;
 import java.net.URL;
 import java.util.*;
 
@@ -25,8 +28,6 @@ public class SceneController implements Initializable {
     private Path selectedPath;
     private List<Path> suitablePaths = new ArrayList<>();
 
-
-
     @FXML private Pane pane;
     @FXML private ScrollPane scrollPane;
     @FXML private ComboBox<Node> fromSelection;
@@ -39,6 +40,8 @@ public class SceneController implements Initializable {
     @FXML private ListView<Node> nodeList;
     @FXML private ListView<Path> routeList;
 
+    private MediaPlayer mediaPlayer;
+
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -46,7 +49,20 @@ public class SceneController implements Initializable {
         initializeNodeCombos();
         initialiseMeasurementCombo("Distance", "Danger", "Difficulty");
         initializeScrollPane();
+        playThemeSong();
         zoom(0.2161);
+    }
+
+    private void playThemeSong() {
+        String gotTheme = "src/main/java/com/got/app/resources/gotThemeSong.mp3";
+        Media sound = new Media(new File(gotTheme).toURI().toString());
+        mediaPlayer = new MediaPlayer(sound);
+        mediaPlayer.play();
+    }
+
+    @FXML
+    private void stopMediaPlayer() {
+        mediaPlayer.stop();
     }
 
     private void initialiseMeasurementCombo(String ...strings) {
@@ -95,10 +111,14 @@ public class SceneController implements Initializable {
 
     private void updateDesiredNodes(ComboBox<Node> combo, List<Node> wanted, List<Node> opposite) {
         Node selection = combo.getSelectionModel().getSelectedItem();
-        combo.getSelectionModel().clearSelection();
-        opposite.remove(selection);
-        if(!wanted.contains(selection) && selection != null) wanted.add(selection);
-        updateListViews();
+        Node to = toSelection.getSelectionModel().getSelectedItem();
+        Node from = fromSelection.getSelectionModel().getSelectedItem();
+        if(!(selection.equals(to) || selection.equals(from))) {
+            combo.getSelectionModel().clearSelection();
+            opposite.remove(selection);
+            if(!wanted.contains(selection)) wanted.add(selection);
+            updateListViews();
+        }
     }
 
     private void clear() {
@@ -108,12 +128,12 @@ public class SceneController implements Initializable {
 
     @FXML
     private void go() {
-        Yen yen = new Yen(graph);
         Node from = fromSelection.getSelectionModel().getSelectedItem();
         Node to = toSelection.getSelectionModel().getSelectedItem();
         String type = measurementSelection.getSelectionModel().getSelectedItem();
+        Yen yen = new Yen(graph, type);
         if(!valid(from, to, type)) return;
-        suitablePaths = yen.kShortestPaths(from, to, 3, type, wayPoints, avoidPoints);
+        suitablePaths = yen.kShortestPaths(from, to, 3, wayPoints, avoidPoints);
         selectedPath = suitablePaths.remove(0);
         drawSelectedRoute();
         setSelectedRouteNodes();
@@ -207,45 +227,6 @@ public class SceneController implements Initializable {
         zoomValue = (zoomValue - step < zoomMin) ? zoomMin : zoomValue - step;
         zoom(zoomValue);
     }
-
-    //        Node source = graph.getNodes().get(0);
-//        Node destination = graph.getNodes().get(3);
-//        Node destination = graph.getNodes().get(44);
-
-//        ArrayList<Node> contains = new ArrayList<>();
-//        contains.add(graph.getNodes().get(8));
-//        contains.add(graph.getNodes().get(17));
-//        contains.add(graph.getNodes().get(26));
-
-//        ArrayList<Node> avoidPoints = new ArrayList<>();
-//
-//        HashMap<String, List<Node>> map = new HashMap<>();
-//        map.put("avoidPoints", avoidPoints);
-//        map.put("contains", contains);
-//
-
-//        Dijkstra d = new Dijkstra(graph, "distance");
-//        Path path = d.shortestPath(source, destination, map);
-
-//        Yen yen = new Yen(graph);
-//        List<Path> paths = yen.kShortestPaths(source, destination, 3, contains, avoidPoints);
-//        List<Path> paths = yen.kShortestPaths(source, destination, 3, avoidPoints);
-
-//        System.out.println(paths.size());
-
-
-//        for(Path path : paths) {
-//        pane.getChildren().addAll(path.drawCircles(Color.RED));
-//        pane.getChildren().addAll(path.drawLines(Color.RED));
-//        pane.getChildren().addAll(paths.get(0).drawCircles(Color.RED));
-//        pane.getChildren().addAll(paths.get(0).drawLines(Color.RED));
-//        pane.getChildren().addAll(paths.get(1).drawCircles(Color.BLUE));
-//        pane.getChildren().addAll(paths.get(1).drawLines(Color.BLUE));
-//        pane.getChildren().addAll(paths.get(2).drawCircles(Color.BLACK));
-//        pane.getChildren().addAll(paths.get(2).drawLines(Color.BLACK));
-//        }
-
-//
 
 
 }

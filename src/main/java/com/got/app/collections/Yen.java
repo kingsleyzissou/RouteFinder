@@ -5,9 +5,13 @@ import java.util.*;
 public class Yen {
 
     private Graph graph;
+    private String type;
+    private Node start;
+    private Node end;
 
-    public Yen(Graph graph) {
+    public Yen(Graph graph, String type) {
         this.graph = graph;
+        this.type = type;
     }
 
 
@@ -24,7 +28,9 @@ public class Yen {
      * @param avoidPoints paths to avoid
      * @return list of K shortest paths
      */
-    public List<Path> kShortestPaths(Node from, Node to, int K, String type, List<Node> avoidPoints) {
+    public List<Path> kShortestPaths(Node from, Node to, int K, List<Node> avoidPoints) {
+        if(start == null) start = from; // if the start node has not been set, set it now
+        if(end == null) end = to; // if the end node has not been set, set it now
         List<Path> A = new ArrayList<>();
         Queue<Path> B = new PriorityQueue<>();
         // Calculate the shortest path first
@@ -51,6 +57,7 @@ public class Yen {
                 Path spurPath = new Dijkstra(graph, type).shortestPath(spurNode, to, avoidPoints);
                 // Merge the spur path to the root path
                 mergeSpurToRoot(spurPath, rootPath, B);
+
                 // Restore nodes and edges back to graph
                 graph.restore();
             }
@@ -72,14 +79,16 @@ public class Yen {
      * @param avoidPoints nodes to avoid
      * @return K shortest paths
      */
-    public List<Path> kShortestPaths(Node from, Node to, int K, String type, List<Node> wayPoints, List<Node> avoidPoints) {
-        if(wayPoints.isEmpty()) return kShortestPaths(from, to, K, type, avoidPoints);
-        List<Path> paths = new ArrayList<>(kShortestPaths(from, wayPoints.get(0), K, type, avoidPoints));
+    public List<Path> kShortestPaths(Node from, Node to, int K, List<Node> wayPoints, List<Node> avoidPoints) {
+        if(wayPoints.isEmpty()) return kShortestPaths(from, to, K, avoidPoints);
+        start = from; end = to; // set global start and end nodes used for completeness check
+        List<Path> paths = new ArrayList<>(kShortestPaths(from, wayPoints.get(0), K, avoidPoints));
         wayPoints.add(to);
         for(int index = 0; index < wayPoints.size() - 1; index++) {
-            List<Path> result = kShortestPaths(wayPoints.get(index), wayPoints.get(index + 1), K, type, avoidPoints);
+            List<Path> result = kShortestPaths(wayPoints.get(index), wayPoints.get(index + 1), K, avoidPoints);
             for(int k = 0; k < K; k++) {
-                paths.get(k).merge(result.get(k));
+                if(result.size() > k && paths.size() > k)
+                    paths.get(k).merge(result.get(k));
             }
         }
         return paths;
@@ -146,13 +155,26 @@ public class Yen {
      * @param B list of candidates
      */
     private void mergeSpurToRoot(Path spurPath, Path rootPath, Queue<Path> B) {
-        if(spurPath != null) {
-            Path total = new Path(rootPath.getNodes(), rootPath.getEdges());
-            total.merge(spurPath);
-            total.getNodes();
-            if(total.isValid())
-                B.add(total);
+        if(isComplete(spurPath)) {
+            B.add(spurPath);
+            return;
         }
+        rootPath.merge(spurPath);
+        rootPath.getNodes();
+        if(rootPath.isValid(start, end))
+            B.add(rootPath);
+    }
+
+    /**
+     * Checks if the spur path goes from the start to end point,
+     * if so, add this path to list of candidates, instead
+     * of merging it
+     *
+     * @param spurPath the path being checked for completeness
+     * @return if the path is complete or not
+     */
+    private boolean isComplete(Path spurPath) {
+        return (spurPath.getNodes().contains(start) && spurPath.getNodes().contains(end));
     }
 
     /**

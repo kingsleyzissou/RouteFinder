@@ -2,35 +2,28 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="72b25934-6b85-4345-8c58-c2a109e697ff" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/got/app/database/graph.dat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/got/benchmarks/GraphBenchmarkTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.classpath" beforeDir="false" afterPath="$PROJECT_DIR$/.classpath" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.project" beforeDir="false" afterPath="$PROJECT_DIR$/.project" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/app.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/graph.dat" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/got/app/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/got/app/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/got/app/Scene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/got/app/resources/Scene.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/got/app/SceneController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/got/app/controllers/SceneController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/got/app/got.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/got/app/resources/got.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/got/collections/Dijkstra.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/got/app/collections/Dijkstra.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/got/collections/DijkstraCost.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/got/app/collections/DijkstraCost.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/got/collections/Edge.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/got/app/collections/Edge.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/got/collections/Graph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/got/app/collections/Graph.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/got/collections/Node.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/got/app/collections/Node.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/got/collections/Path.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/got/app/collections/Path.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/got/collections/Yen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/got/app/collections/Yen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/got/helpers/DataLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/got/app/helpers/DataLoader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/got/helpers/ExcelReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/got/app/helpers/ExcelReader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/got/app/collections/Path.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/got/app/collections/Path.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/got/app/collections/Yen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/got/app/collections/Yen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/got/app/controllers/SceneController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/got/app/controllers/SceneController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/got/app/database/towns.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/got/app/database/towns.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/got/app/helpers/DataLoader.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/got/app/helpers/ExcelReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/got/app/helpers/ExcelReader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/got/app/resources/Scene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/got/app/resources/Scene.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/got/benchmarks/MyBenchmark.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/BenchmarkList" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/META-INF/BenchmarkList" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/CompilerHints" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/META-INF/CompilerHints" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/got/app/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/got/app/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/got/app/SceneController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/got/collections/Dijkstra.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/got/collections/DijkstraCost.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/got/collections/Edge.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/got/collections/Graph.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/got/collections/Node.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/got/collections/Path.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/got/collections/Yen.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/got/helpers/DataLoader.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/got/helpers/ExcelReader.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/towns.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/got/app/database/towns.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/got/app/collections/Path.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/got/app/collections/Path.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/got/app/collections/Yen.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/got/app/collections/Yen.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/got/app/controllers/SceneController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/got/app/controllers/SceneController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/got/app/helpers/ExcelReader.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/got/app/helpers/ExcelReader.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/got/benchmarks/MyBenchmark.class" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -55,14 +48,47 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/got/app/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="65">
-              <caret line="17" column="14" selection-start-line="17" selection-start-column="14" selection-end-line="17" selection-end-column="14" />
+            <state relative-caret-position="184">
+              <caret line="14" column="84" selection-start-line="14" selection-start-column="48" selection-end-line="14" selection-end-column="84" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/got/app/collections/Graph.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="92">
+              <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/got/app/collections/Node.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="598">
+              <caret line="29" column="28" selection-start-line="29" selection-start-column="28" selection-end-line="29" selection-end-column="28" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/got/app/collections/Edge.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="583">
+              <caret line="99" selection-start-line="99" selection-end-line="99" />
             </state>
           </provider>
         </entry>
@@ -70,8 +96,24 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/got/app/controllers/SceneController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="332">
-              <caret line="85" column="32" lean-forward="true" selection-start-line="85" selection-start-column="32" selection-end-line="85" selection-end-column="32" />
+            <state relative-caret-position="1012">
+              <caret line="59" column="27" lean-forward="true" selection-start-line="59" selection-start-column="27" selection-end-line="59" selection-end-column="27" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#6418#6419#0" expanded="true" />
+                <element signature="e#6495#6496#0" expanded="true" />
+                <element signature="e#6735#6736#0" expanded="true" />
+                <element signature="e#6814#6815#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/got/app/helpers/ExcelReader.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1219">
+              <caret line="61" column="24" selection-start-line="61" selection-start-column="24" selection-end-line="61" selection-end-column="24" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -80,10 +122,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/got/app/helpers/DataLoader.java">
+        <entry file="file://$PROJECT_DIR$/src/tests/java/com/got/DijsktraTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-176">
-              <caret line="15" column="80" selection-start-line="15" selection-start-column="80" selection-end-line="15" selection-end-column="80" />
+            <state relative-caret-position="851">
+              <caret line="48" column="15" selection-start-line="48" selection-start-column="15" selection-end-line="48" selection-end-column="15" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -92,19 +134,25 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/got/app/collections/Yen.java">
+        <entry file="file://$PROJECT_DIR$/src/tests/java/com/got/YenTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="125">
-              <caret line="158" column="32" selection-start-line="158" selection-start-column="32" selection-end-line="158" selection-end-column="32" />
+            <state relative-caret-position="1334">
+              <caret line="66" column="53" selection-start-line="66" selection-start-column="53" selection-end-line="66" selection-end-column="53" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/got/app/collections/DijkstraCost.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/got/benchmarks/GraphBenchmarkTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="184">
-              <caret line="8" column="36" selection-start-line="8" selection-start-column="20" selection-end-line="8" selection-end-column="36" />
+            <state relative-caret-position="1932">
+              <caret line="127" selection-start-line="127" selection-end-line="127" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -112,49 +160,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/got/app/collections/Path.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-139">
-              <caret line="169" column="30" selection-start-line="169" selection-start-column="30" selection-end-line="169" selection-end-column="30" />
+            <state relative-caret-position="3657">
+              <caret line="170" column="12" selection-start-line="170" selection-start-column="12" selection-end-line="170" selection-end-column="12" />
               <folding>
-                <element signature="e#1488#1489#0" expanded="true" />
-                <element signature="e#1521#1522#0" expanded="true" />
-                <element signature="e#4759#4760#0" expanded="true" />
-                <element signature="e#4797#4798#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/got/app/collections/Dijkstra.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="916">
-              <caret line="99" selection-start-line="99" selection-end-line="99" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/got/app/resources/Scene.fxml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2063">
-              <caret line="101" column="24" selection-start-line="101" selection-start-column="24" selection-end-line="101" selection-end-column="24" />
-            </state>
-          </provider>
-          <provider editor-type-id="JavaFX-Scene-Builder" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/got/app/database/graph.dat">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/got/app/helpers/ExcelReader.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="155">
-              <caret line="46" column="80" selection-start-line="46" selection-start-column="80" selection-end-line="46" selection-end-column="80" />
-              <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#1492#1493#0" expanded="true" />
+                <element signature="e#1526#1527#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -174,13 +184,20 @@
       <find>1.</find>
       <find>from</find>
       <find>update</find>
-      <find>getcost</find>
       <find>createsub</find>
       <find>sort</find>
       <find>merg</find>
       <find>syst</find>
       <find>onaction</find>
       <find>gr</find>
+      <find>getcost</find>
+      <find>type</find>
+      <find>zoomgr</find>
+      <find>group</find>
+      <find>isvalid</find>
+      <find>iscomp</find>
+      <find>system</find>
+      <find>addwa</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -207,9 +224,17 @@
         <option value="$PROJECT_DIR$/src/main/java/com/got/app/SceneController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/got/helpers/DataLoader.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/got/helpers/ExcelReader.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/got/app/helpers/ExcelReader.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/got/app/helpers/DataLoader.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/got/benchmarks/MyBenchmark.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/got/benchmarks/GraphBenchmarkTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/got/app/Main.java" />
+        <option value="$PROJECT_DIR$/src/tests/java/com/got/GraphTest.java" />
+        <option value="$PROJECT_DIR$/src/tests/java/com/got/DijsktraTest.java" />
+        <option value="$PROJECT_DIR$/src/tests/java/com/got/YenTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/got/app/collections/Path.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/got/app/collections/Yen.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/got/app/controllers/SceneController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/got/app/helpers/ExcelReader.java" />
       </list>
     </option>
   </component>
@@ -234,7 +259,7 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="y" value="23" />
     <option name="width" value="1440" />
     <option name="height" value="797" />
@@ -245,7 +270,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -296,7 +321,7 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="got" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="helpers" type="462c0819:PsiDirectoryNode" />
+              <item name="collections" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="app" type="b2602c69:ProjectViewProjectNode" />
@@ -306,7 +331,7 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="got" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="helpers" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="app" type="b2602c69:ProjectViewProjectNode" />
@@ -317,11 +342,41 @@
               <item name="got" type="462c0819:PsiDirectoryNode" />
               <item name="benchmarks" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="app" type="b2602c69:ProjectViewProjectNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="tests" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="app" type="b2602c69:ProjectViewProjectNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="tests" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="app" type="b2602c69:ProjectViewProjectNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="tests" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="app" type="b2602c69:ProjectViewProjectNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="tests" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="got" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -336,6 +391,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/java/com/got/app/resources" />
       <recent name="$PROJECT_DIR$/src/main/java/com/got/resources" />
       <recent name="$PROJECT_DIR$/src/main/java/com/got/database" />
       <recent name="$PROJECT_DIR$" />
@@ -354,13 +410,13 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.got.app.Main" />
+  <component name="RunManager" selected="Application.GraphBenchmarkTest">
+    <configuration name="GraphBenchmarkTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.got.benchmarks.GraphBenchmarkTest" />
       <module name="app" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.got.app.collections.*" />
+          <option name="PATTERN" value="com.got.benchmarks.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -368,9 +424,54 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.got.app.Main" />
+      <module name="app" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.got.app.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DijsktraTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="app" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="DijsktraTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="YenTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="app" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="YenTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="YenTest.shortestPathWithWaypointContainThatNode" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="app" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="YenTest" />
+      <option name="METHOD_NAME" value="shortestPathWithWaypointContainThatNode" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.GraphBenchmarkTest" />
+        <item itemvalue="JUnit.YenTest" />
+        <item itemvalue="JUnit.DijsktraTest" />
         <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.YenTest.shortestPathWithWaypointContainThatNode" />
       </list>
     </recent_temporary>
   </component>
@@ -394,25 +495,53 @@
       <workItem from="1554299464607" duration="588000" />
       <workItem from="1554812875878" duration="738000" />
       <workItem from="1555523323725" duration="6258000" />
-      <workItem from="1555673269998" duration="11579000" />
+      <workItem from="1555673269998" duration="12235000" />
+      <workItem from="1556638810938" duration="11730000" />
+      <workItem from="1556730514249" duration="2361000" />
+      <workItem from="1557608060584" duration="63000" />
     </task>
     <servers />
   </component>
+  <component name="TestHistory">
+    <history-entry file="GraphTest - 2019.04.30 at 18h 10m 44s.xml">
+      <configuration name="GraphTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="GraphTest_shortestPathWithAvoidNodeDoesNotContainThatNode - 2019.04.30 at 18h 12m 25s.xml">
+      <configuration name="GraphTest.shortestPathWithAvoidNodeDoesNotContainThatNode" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="GraphTest_shortestPathWithWaypointContainThatNode - 2019.04.30 at 18h 13m 17s.xml">
+      <configuration name="GraphTest.shortestPathWithWaypointContainThatNode" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="YenTest - 2019.04.30 at 18h 21m 44s.xml">
+      <configuration name="YenTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="YenTest_shortestPathWithWaypointContainThatNode - 2019.04.30 at 18h 23m 19s.xml">
+      <configuration name="YenTest.shortestPathWithWaypointContainThatNode" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="YenTest - 2019.04.30 at 19h 31m 12s.xml">
+      <configuration name="YenTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="DijsktraTest - 2019.05.02 at 11h 10m 01s.xml">
+      <configuration name="DijsktraTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="YenTest - 2019.05.02 at 11h 10m 10s.xml">
+      <configuration name="YenTest" configurationId="JUnit" />
+    </history-entry>
+  </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="81642000" />
+    <option name="totallyTimeSpent" value="96452000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1440" height="797" extended-state="0" />
-    <editor active="true" />
+    <frame x="0" y="23" width="1440" height="797" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.28540772" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.29756796" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="UI Designer" order="3" />
       <window_info id="Favorites" order="4" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.3280116" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3280116" />
+      <window_info active="true" anchor="bottom" id="Find" order="1" visible="true" weight="0.3280116" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3280116" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39912918" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -495,27 +624,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/got/app/collections/Graph.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/got/collections/RouteCost.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/got/app/collections/Node.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="529">
-          <caret line="29" column="28" selection-start-line="29" selection-start-column="28" selection-end-line="29" selection-end-column="28" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar:///Library/Java/JavaVirtualMachines/jdk-10.0.2.jdk/Contents/Home/lib/src.zip!/java.base/java/util/Collections.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="141">
@@ -570,13 +679,23 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/got/collections/TraverseGraph.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/got/helpers/SelectionHelper.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/got/helpers/SelectionHelper.java" />
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk-10.0.2.jdk/Contents/Home/lib/src.zip!/javafx.fxml/javafx/fxml/FXMLLoader.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="6" column="19" lean-forward="true" selection-start-line="6" selection-start-column="19" selection-end-line="6" selection-end-column="19" />
+        <state relative-caret-position="141">
+          <caret line="2537" selection-start-line="2537" selection-end-line="2537" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/got/app/resources/got.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/got/app/helpers/DataLoader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="15" column="80" selection-start-line="15" selection-start-column="80" selection-end-line="15" selection-end-column="80" />
           <folding>
-            <element signature="e#147#148#0" expanded="true" />
-            <element signature="e#172#173#0" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -588,98 +707,158 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk-10.0.2.jdk/Contents/Home/lib/src.zip!/javafx.fxml/javafx/fxml/FXMLLoader.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/got/app/database/graph.dat">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/target/generated-sources/annotations/com/got/benchmarks/generated/GraphBenchmarkTest_a_getKShortestPathsWithWayPoints_jmhTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="141">
-          <caret line="2537" selection-start-line="2537" selection-end-line="2537" />
+        <state relative-caret-position="134">
+          <caret line="236" selection-start-line="236" selection-end-line="236" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/got/app/collections/Edge.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1137">
-          <caret line="99" selection-start-line="99" selection-end-line="99" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/got/app/resources/got.jpg">
-      <provider selected="true" editor-type-id="images" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/got/app/collections/Dijkstra.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="916">
-          <caret line="99" selection-start-line="99" selection-end-line="99" />
+        <state relative-caret-position="-1057">
+          <caret line="28" column="16" selection-start-line="28" selection-start-column="16" selection-end-line="28" selection-end-column="16" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/got/app/collections/Path.java">
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk-10.0.2.jdk/Contents/Home/lib/src.zip!/java.base/java/lang/reflect/Method.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-139">
-          <caret line="169" column="30" selection-start-line="169" selection-start-column="30" selection-end-line="169" selection-end-column="30" />
-          <folding>
-            <element signature="e#1488#1489#0" expanded="true" />
-            <element signature="e#1521#1522#0" expanded="true" />
-            <element signature="e#4759#4760#0" expanded="true" />
-            <element signature="e#4797#4798#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="141">
+          <caret line="563" selection-start-line="563" selection-end-line="563" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/got/app/collections/Yen.java">
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk-10.0.2.jdk/Contents/Home/lib/src.zip!/java.base/jdk/internal/reflect/DelegatingMethodAccessorImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
-          <caret line="158" column="32" selection-start-line="158" selection-start-column="32" selection-end-line="158" selection-end-column="32" />
+        <state relative-caret-position="172">
+          <caret line="42" selection-start-line="42" selection-end-line="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk-10.0.2.jdk/Contents/Home/lib/src.zip!/java.base/jdk/internal/reflect/NativeMethodAccessorImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="141">
+          <caret line="61" selection-start-line="61" selection-end-line="61" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/got/app/resources/Scene.fxml">
       <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2063">
-          <caret line="101" column="24" selection-start-line="101" selection-start-column="24" selection-end-line="101" selection-end-column="24" />
+        <state relative-caret-position="112">
+          <caret line="30" column="55" selection-start-line="30" selection-start-column="55" selection-end-line="30" selection-end-column="55" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/got/app/database/graph.dat">
-      <provider selected="true" editor-type-id="text-editor" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/got/app/collections/Yen.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4048">
+          <caret line="176" column="37" selection-start-line="176" selection-start-column="37" selection-end-line="176" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/got/app/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="14" column="84" selection-start-line="14" selection-start-column="48" selection-end-line="14" selection-end-column="84" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/got/app/collections/Graph.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/got/app/collections/Node.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="598">
+          <caret line="29" column="28" selection-start-line="29" selection-start-column="28" selection-end-line="29" selection-end-column="28" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/got/app/controllers/SceneController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="332">
-          <caret line="85" column="32" lean-forward="true" selection-start-line="85" selection-start-column="32" selection-end-line="85" selection-end-column="32" />
+        <state relative-caret-position="1012">
+          <caret line="59" column="27" lean-forward="true" selection-start-line="59" selection-start-column="27" selection-end-line="59" selection-end-column="27" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#6418#6419#0" expanded="true" />
+            <element signature="e#6495#6496#0" expanded="true" />
+            <element signature="e#6735#6736#0" expanded="true" />
+            <element signature="e#6814#6815#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/got/app/helpers/ExcelReader.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="155">
-          <caret line="46" column="80" selection-start-line="46" selection-start-column="80" selection-end-line="46" selection-end-column="80" />
+        <state relative-caret-position="1219">
+          <caret line="61" column="24" selection-start-line="61" selection-start-column="24" selection-end-line="61" selection-end-column="24" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/got/app/helpers/DataLoader.java">
+    <entry file="file://$PROJECT_DIR$/src/tests/java/com/got/DijsktraTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-176">
-          <caret line="15" column="80" selection-start-line="15" selection-start-column="80" selection-end-line="15" selection-end-column="80" />
+        <state relative-caret-position="851">
+          <caret line="48" column="15" selection-start-line="48" selection-start-column="15" selection-end-line="48" selection-end-column="15" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/got/app/Main.java">
+    <entry file="file://$PROJECT_DIR$/src/tests/java/com/got/YenTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="65">
-          <caret line="17" column="14" selection-start-line="17" selection-start-column="14" selection-end-line="17" selection-end-column="14" />
+        <state relative-caret-position="1334">
+          <caret line="66" column="53" selection-start-line="66" selection-start-column="53" selection-end-line="66" selection-end-column="53" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/got/benchmarks/GraphBenchmarkTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1932">
+          <caret line="127" selection-start-line="127" selection-end-line="127" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/got/app/collections/Path.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3657">
+          <caret line="170" column="12" selection-start-line="170" selection-start-column="12" selection-end-line="170" selection-end-column="12" />
+          <folding>
+            <element signature="e#1492#1493#0" expanded="true" />
+            <element signature="e#1526#1527#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/got/app/collections/Edge.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="583">
+          <caret line="99" selection-start-line="99" selection-end-line="99" />
         </state>
       </provider>
     </entry>
